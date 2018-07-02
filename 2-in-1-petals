@@ -45,15 +45,14 @@ void setup() {
   String portName = Serial.list()[0];
   myPort = new Serial(this, portName, 9600);
   // serialEvents() are only generated if a newline character has been read
-  myPort.bufferUntil('\n');
-  
-  // use HSB to make sure colors never clash
-  colorMode(HSB,100,100,100);
+  myPort.bufferUntil('\n'); 
 }
 
 int cnt = 0;
 
 void draw() {
+   // use HSB to make sure colors never clash
+  colorMode(HSB,100,100,values[5]);
   if (values[12] < 400) {
     //noStroke();
     backgroundColor = color(0,0,0);
